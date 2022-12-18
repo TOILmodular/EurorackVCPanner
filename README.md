@@ -1,20 +1,24 @@
 # EurorackVCPanner
 ## General
 A voltage-controlled 2-channel panning Eurorack module, based on the design from YUSYNTH.
-Two modulation parameters, shape and range, with a CV input for the range.
 
-You can check this [Youtube video](https://youtu.be/8ZWv8SXo3Ds) to see the module in action.
+You can check this [Youtube video](https://youtu.be/wUGyGTA9OOM) to see the module in action.
 
 ## Module Built and PCBs
 If you want to build the module yourself, I uploaded the schematic, the BOM and the Gerber files for the PCB.
 
-I used several SMD components for op ams and bypass caps.
+The PCB designs are purely through-hole.
 
 There are two different versions for the control board, an "original" and a "Thonk" version.
 Reason is that for my own module, I am using specific potentiometers - 16K4 series from Supertech Electronics - and 3.5mm jack sockets - MJ-355 from Marushin - available at my local electronics shop.
 
 However, since most DIY projects for Eurorack modules out there are using potentiometers from ALPHA and so-called THONKICONN jacks, as they are provided by Thonk in the UK, I also created a version with footprints for those components.
 Choose the one you need.
+
+Please note, that there is also a difference in the front panel components between the different versions.
+The "original" version has an additional stereo jack output for connecting to a 3.5mm head phone, while the "Thonk" version only has the separate mono output jacks for the two channels.
+
+The reason is simply that I did not find any stereo type of the THONKICONN jacks.
 
 I created the Gerber files with the online tool EasyEDA and ordered it at JLCPCB.
 I cannot guarantee, if this set of zipped Gerber files works also for other providers, like e.g. PCBWay. I have not tried that. But I saw online, that others did it.
@@ -23,26 +27,32 @@ If you want to know about my DIY building process, take a look at those two YouT
 - [How I design PCBs for my Eurorack Synth Modules](https://youtu.be/pXtuV9Pv-m4)
 - [Eurorack Module Synth - Building an Electric Druid Wavetable Oscillator Module](https://youtu.be/ECpdo4HfqLg)
 
-## Panel Layout
-I added the information about hole coordinates for the front panel in the folder PanelLayout, refering to the component layout in the Gerber files. The layout is the same for both versions.
+## Panel Layout (two versions)
+I added the information about hole coordinates for the front panels in the folder PanelLayout, refering to the component layout in the Gerber files. The layout differs between the two PCB versions due to the stereo output jack only available in the "original" version.
 
 ## Calibration
-The calibration requires a simple oscilloscope. I just used a free app with simple features on my Mac. There are two trimmers for calibration, labelled SYM and VOL. In addition, there is a check point, labelled CALOUT on the left side of the PBC (and in the schematic, in case you want to build your own PCB).
+The two trimmers are used to adjust the midrange for the paning for each channel.
+Each trimmer (left/right on the board) belongs to one channel (accordingly, as the component layout is symmetric, left and right).
 
-The procedure is the following:
-1. Set both trimmers to mid-range.
-2. Connect a sinewave (1KHz, 10Vpp) to the input with the Range knob turned fully clockwise.
-3. Connect the Range CV to 0V (ground) and turn the CV knob fully clockwise.
-4. Connect the check point CALOUT to the oscilloscope.
-5. Adjust the trimmer SYM in order to have a symmetrical sine wave at the output. You may have also to play slightly with trimmer VOL as well to reduce gain if you have saturation on both the positive and negative peaks of the output sinewave.
-6. Turn the CV knob fully counter-clockwise (no CV).
-7. Adjust trimmer VOL in order to completly mute the output signal.
+The procedure for each channel is the following:
+1. Use a voltmeter and adjust the trimmer in order to measure -4V on the wiper pad of the trimmer.
+2. Send a triangle wave (1kHz) with an amplitude of 10Vpp (-5V/+5V) on the input of the channel.
+3. Set the pan level pot entirely counter-clockwise, and the pan pot to 12 o'clock.
+4. Connect a dual channel oscilloscope at the outputs A and B. You should obtain the triangle with equal amplitude on both channels, then turn the pan pot from clockwise to counter-clockwise position. You should observe the disappearing of the triangle on one side and the increase in amplitude on the other side.
+5. Adjust the trimmer, so that when the pan pot is at 12 o'clock, the amplitude of the two triangle waves is roughly half of that can be measured for one wave when the pan pot is set to clockwise or counter-clockwise positions. (If you don't have an oscilloscope by ear using hadphones, check for an even balance at 12 o'clock, then verify that the panning effect acts as expected when rotating the pan pot).
 
 ## Additional Information about specific Components
 If you want to use the Gerber files for having PCB manufactured, please note the following information about components used.
 
-- According to the original design, the two parallel BC547 transistors have to be matched ones. However, I did not pay real attention to that, and the result is still nice.
-- The design makes use of the SMD version of the quad op amp TL074. Any other SMD quad op amp with the same pinout should work, as well, e.g. UPC824.
-- There is another SMD dual op amp, NJM4580. Again, any dual op amp with the same pinout (TL072) is ok.
-- There is a number of SMD 0.1uF capacitors with the package size 1608.
-- In order to save space, I am always using small size resistors, about 3mm length, which are about half the size of usually used resistors.
+- On the control board, you will find electrolytic capacitors with a rectangle next to them. Since these capacitors are too tall for standing upright on the board with the main board on top of it, those capacitors need to be mounted in a rectangular position. The rectangle shows the position for each bent-over capacitor.
+
+![VCPanner](https://user-images.githubusercontent.com/97026614/208285201-dfbbc868-3e67-439f-993b-360eb0bb05e7.jpeg)
+
+
+<img width="389" alt="VCPanner_PCB_Main_Back_Thonk" src="https://user-images.githubusercontent.com/97026614/208284757-2657470f-5ccf-44d8-b783-eee1ba2389bf.png">
+
+<img width="389" alt="VCPanner_PCB_Main_Front_Thonk" src="https://user-images.githubusercontent.com/97026614/208284758-f55b4fe3-2c1e-49f0-a35d-8ce1be8cc83e.png">
+
+<img width="389" alt="VCPanner_PCB_Ctrl_Front_Thonk" src="https://user-images.githubusercontent.com/97026614/208284753-1e3e428a-b3fb-4bca-9c43-79683ca24706.png">
+
+<img width="389" alt="VCPanner_PCB_Ctrl_Back_Thonk" src="https://user-images.githubusercontent.com/97026614/208284749-c599325a-299f-4a56-8f6b-a072ba5d1d33.png">
