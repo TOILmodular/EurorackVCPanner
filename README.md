@@ -48,6 +48,11 @@ If you want to use the Gerber files for having PCB manufactured, please note the
 
 ![VCPanner](https://user-images.githubusercontent.com/97026614/208285201-dfbbc868-3e67-439f-993b-360eb0bb05e7.jpeg)
 
+![VCPannerFront](https://user-images.githubusercontent.com/97026614/208285485-5868b83e-366f-40ce-acf1-905e7239262e.jpeg)
+
+![VCPannerSide](https://user-images.githubusercontent.com/97026614/208285495-b5506d2f-b3a5-4faa-b05f-4f2914710ab7.jpeg)
+
+![VCPannerBack](https://user-images.githubusercontent.com/97026614/208285500-fb965954-ad8f-43df-86e7-0887a7a944d3.jpeg)
 
 <img width="389" alt="VCPanner_PCB_Main_Back_Thonk" src="https://user-images.githubusercontent.com/97026614/208284757-2657470f-5ccf-44d8-b783-eee1ba2389bf.png">
 
