@@ -4,7 +4,7 @@ A voltage-controlled 2-channel panning Eurorack module, based on the design from
 
 You can check this [Youtube video](https://youtu.be/wUGyGTA9OOM) to see the module in action.
 
-## Module Built and PCBs
+## Module Build and PCBs
 If you want to build the module yourself, I uploaded the schematic, the BOM and the Gerber files for the PCB.
 
 The PCB designs are purely through-hole.
