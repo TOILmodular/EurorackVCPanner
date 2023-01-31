@@ -28,7 +28,7 @@ If you want to know about my DIY building process, take a look at those two YouT
 - [Eurorack Module Synth - Building an Electric Druid Wavetable Oscillator Module](https://youtu.be/ECpdo4HfqLg)
 
 ## Panel Layout (two versions)
-I added the information about hole coordinates for the front panels in the folder PanelLayout, refering to the component layout in the Gerber files. The layout differs between the two PCB versions due to the stereo output jack only available in the "original" version.
+I added the information about hole coordinates for the front panels in the folder PanelLayout, referring to the component layout in the Gerber files. The layout differs between the two PCB versions due to the stereo output jack only available in the "original" version.
 
 ## Calibration
 The two trimmers are used to adjust the midrange for the paning for each channel.
